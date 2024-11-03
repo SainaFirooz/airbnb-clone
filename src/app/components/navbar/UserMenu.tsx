@@ -37,8 +37,8 @@ const UserMenu = () => {
       {isOpen && (
         <div className="absolute rounded-xl shadow-lg w-[200px] md:w-[200px] bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
-            <MenuItem onClick={() => {}} label="Login" />
             <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
+            <MenuItem onClick={() => {}} label="Login" />
           </div>
         </div>
       )}
