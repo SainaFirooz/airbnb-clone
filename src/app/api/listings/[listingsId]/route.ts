@@ -3,7 +3,7 @@
 
 import { NextResponse } from "next/server";
 import prisma from "../../../libs/prismadb";
-import getCurrentUser from "@/app/actions/getCurrentUser";
+import getCurrentUser from "../../../actions/getCurrentUser";
 
 interface IParams {
   listingsId?: string;
