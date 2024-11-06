@@ -18,7 +18,7 @@ const AdminPage = async () => {
     );
   }
 
-  const listings = await getListings();
+  const listings = await getListings({});
 
   if (!listings || listings.length === 0) {
     return (
