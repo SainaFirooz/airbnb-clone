@@ -1,7 +1,7 @@
 "use client";
 
 import qs from "query-string";
-import useSearchModal from "@/app/hooks/useSearchModal";
+import useSearchModal from "../../hooks/useSearchModal";
 import Modal from "./Modal";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
