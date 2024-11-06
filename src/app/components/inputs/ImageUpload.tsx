@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useCallback } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
 
+/* eslint-disable no-var */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
   var cloudinary: any;
 }

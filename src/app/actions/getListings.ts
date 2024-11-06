@@ -1,5 +1,4 @@
 import prisma from "@/app/libs/prismadb";
-import { start } from "repl";
 
 export interface iListingsParams {
   userId?: string;
@@ -24,8 +23,8 @@ export default async function getListings(params: iListingsParams) {
       locationValue,
       category,
     } = params || {};
-
-    let query: any = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const query: any = {};
 
     if (userId) {
       query.userId = userId;
@@ -87,7 +86,7 @@ export default async function getListings(params: iListingsParams) {
       createdAt: listing.createdAt.toISOString(),
     }));
     return safeListings;
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error) {
+    console.log("Error in getListings", error);
   }
 }

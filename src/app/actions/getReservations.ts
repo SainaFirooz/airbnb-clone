@@ -9,7 +9,7 @@ interface iParams {
 export default async function getReservations(params: iParams) {
   try {
     const { listingId, userId, authorId } = params;
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const query: any = {};
 
     if (listingId) {
@@ -46,7 +46,7 @@ export default async function getReservations(params: iParams) {
     }));
 
     return safeReservations;
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error) {
+    console.error("Error fetching reservations:", error);
   }
 }

@@ -3,7 +3,6 @@
 import {
   GiBarn,
   GiBoatFishing,
-  GiCactus,
   GiCastle,
   GiCaveEntrance,
   GiForestCamp,

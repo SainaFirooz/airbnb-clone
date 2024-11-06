@@ -7,7 +7,10 @@ interface IParams {
   listingId?: string;
 }
 
-export async function POST(request: Request, props: { params: Promise<IParams> }) {
+export async function POST(
+  request: Request,
+  props: { params: Promise<IParams> }
+) {
   const params = await props.params;
   const currentUser = await getCurrentUser();
 
@@ -20,7 +23,7 @@ export async function POST(request: Request, props: { params: Promise<IParams> }
   if (!listingId || typeof listingId !== "string") {
     throw new Error("Invalid listing ID");
   }
-
+  // eslint-disable-next-line prefer-const
   let favoriteIds = [...(currentUser.favoriteIds || [])];
 
   favoriteIds.push(listingId);
@@ -37,7 +40,10 @@ export async function POST(request: Request, props: { params: Promise<IParams> }
   return NextResponse.json(user);
 }
 
-export async function DELETE(request: Request, props: { params: Promise<IParams> }) {
+export async function DELETE(
+  request: Request,
+  props: { params: Promise<IParams> }
+) {
   const params = await props.params;
   const currentUser = await getCurrentUser();
 

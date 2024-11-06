@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
+
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 import getCurrentUser from "@/app/actions/getCurrentUser";
@@ -6,14 +9,17 @@ interface IParams {
   listingsId?: string;
 }
 
-export async function DELETE(request: Request, context: { params: Promise<IParams> }) {
+export async function DELETE(
+  request: Request,
+  context: { params: Promise<IParams> }
+) {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     return NextResponse.error();
   }
 
-  const { listingsId } = (await context.params);
-  console.log("Received params:", (await context.params));
+  const { listingsId } = await context.params;
+  console.log("Received params:", await context.params);
   console.log("Received listingsId:", listingsId);
   console.log("Current user:", currentUser);
 

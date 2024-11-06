@@ -31,7 +31,8 @@ export default async function getCurrentUser() {
       emailVerified: currentUser.emailVerified?.toISOString() || null,
       isAdmin: currentUser.isAdmin,
     };
-  } catch (error: any) {
+  } catch (error) {
+    console.error("Error fetching current user:", error);
     return null;
   }
 }
