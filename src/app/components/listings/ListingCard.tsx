@@ -1,6 +1,6 @@
 "use client";
 
-import useCountries from "@/app/hooks/useCountries";
+import useCountries from "../../hooks/useCountries";
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
