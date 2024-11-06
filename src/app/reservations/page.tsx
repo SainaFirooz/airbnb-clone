@@ -22,7 +22,7 @@ const ReservationsPage = async () => {
 
   console.log("Reservations:", reservations);
 
-  if (reservations.length === 0) {
+  if (!reservations || reservations.length === 0) {
     return (
       <ClientOnly>
         <EmptyState
@@ -35,7 +35,7 @@ const ReservationsPage = async () => {
   return (
     <ClientOnly>
       <ReservationsClient
-        reservations={reservations}
+        reservations={reservations ?? []}
         currentUser={currentUser}
       />
     </ClientOnly>
