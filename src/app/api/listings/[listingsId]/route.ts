@@ -6,14 +6,14 @@ interface IParams {
   listingsId?: string;
 }
 
-export async function DELETE(request: Request, context: { params: IParams }) {
+export async function DELETE(request: Request, context: { params: Promise<IParams> }) {
   const currentUser = await getCurrentUser();
   if (!currentUser) {
     return NextResponse.error();
   }
 
-  const { listingsId } = context.params;
-  console.log("Received params:", context.params);
+  const { listingsId } = (await context.params);
+  console.log("Received params:", (await context.params));
   console.log("Received listingsId:", listingsId);
   console.log("Current user:", currentUser);
 
