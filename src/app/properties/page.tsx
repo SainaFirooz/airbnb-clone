@@ -20,7 +20,7 @@ const PropertiesPage = async () => {
     userId: currentUser.id,
   });
 
-  if (listings.length === 0) {
+  if (!listings || listings.length === 0) {
     return (
       <ClientOnly>
         <EmptyState
